@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /events.html
+Allow: /
+
+Sitemap: https://digira.xyz/sitemap.xml

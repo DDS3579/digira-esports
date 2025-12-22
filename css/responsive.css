@@ -1,0 +1,874 @@
+/* ========================================
+   Digira Esports - Responsive Styles
+   ======================================== */
+
+/* Base mobile optimizations */
+@media (max-width: 767px) {
+  /* Improve touch targets */
+  a, button, .btn, input, textarea, select {
+    -webkit-tap-highlight-color: rgba(30, 136, 217, 0.2);
+    tap-highlight-color: rgba(30, 136, 217, 0.2);
+  }
+
+  /* Prevent text size adjustment on iOS */
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Improve scrolling */
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Optimize images */
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* Tablet: 768px - 1023px */
+@media (max-width: 1023px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .section {
+    padding: 70px 20px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .about-teaser-grid,
+  .two-column-layout {
+    gap: 40px;
+  }
+
+  .mission-vision-grid {
+    gap: 30px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .benefits-grid {
+    gap: 25px;
+  }
+
+  .tiers-grid {
+    gap: 25px;
+  }
+
+  .contact-layout {
+    gap: 40px;
+  }
+
+  .footer-content {
+    gap: 30px;
+  }
+
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-title-animated {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-description {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile: 320px - 767px */
+@media (max-width: 767px) {
+  /* Typography */
+  html {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.375rem;
+    line-height: 1.4;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-tagline,
+  .page-subtitle,
+  .cta-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .hero-title-animated {
+    font-size: 3rem !important;
+    letter-spacing: 2px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .section-title {
+    font-size: 1.875rem;
+    margin-bottom: 30px;
+  }
+
+  /* Navigation */
+  .navbar {
+    height: 65px;
+  }
+
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .logo img {
+    height: 40px;
+    max-width: 120px;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.98) 0%, rgba(11, 15, 20, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(30, 136, 217, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.active {
+    max-height: 400px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(30, 136, 217, 0.1);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 18px 20px;
+    font-size: 1rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    padding: 8px;
+  }
+
+  .mobile-menu-toggle span {
+    width: 22px;
+    height: 2.5px;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Sections */
+  .section {
+    padding: 50px 15px;
+  }
+
+  .section::before {
+    opacity: 0.5;
+  }
+
+  .container {
+    padding: 0 15px;
+    max-width: 100%;
+  }
+
+  .page-header {
+    padding: 90px 15px 50px;
+    margin-top: 65px;
+  }
+
+  .page-header::before {
+    opacity: 0.6;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: calc(100vh - 65px);
+    padding: 60px 20px;
+    margin-top: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-content {
+    padding: 0 15px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .hero-background-overlay {
+    opacity: 0.8;
+  }
+
+  .hero-grid {
+    opacity: 0.4;
+    background-size: 40px 40px;
+  }
+
+  .hero-gradient-orb {
+    opacity: 0.35;
+  }
+
+  .hero-orb-1 {
+    width: 280px;
+    height: 280px;
+    top: 5%;
+    left: -10%;
+  }
+
+  .hero-orb-2 {
+    width: 220px;
+    height: 220px;
+    bottom: 10%;
+    right: -10%;
+  }
+
+  .hero-orb-3 {
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    right: 20%;
+  }
+
+  .hero-title-animated {
+    font-size: 3rem !important;
+    letter-spacing: 2px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 20px !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-description {
+    font-size: 1.5rem !important;
+    letter-spacing: 1.5px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 18px !important;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .hero-description-animated::after {
+    width: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 35px !important;
+    text-align: center;
+    color: var(--text-muted);
+  }
+
+  .hero-tagline-animated::after {
+    width: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+  }
+
+  .hero-cta .btn,
+  .hero-cta .btn-text {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 16px 32px;
+    min-height: 52px;
+  }
+
+  .hero-btn-animated {
+    animation-delay: 0s !important;
+  }
+
+  /* Disable parallax on mobile for performance */
+  .hero-content {
+    transform: none !important;
+  }
+
+  .hero-logo-animated {
+    transform: none !important;
+  }
+
+  /* Enhanced mobile hero aesthetics */
+  .hero-content::after {
+    width: 250px;
+    height: 250px;
+    opacity: 0.5;
+  }
+
+  .hero-title-animated::before {
+    filter: blur(15px);
+    opacity: 0.6;
+  }
+
+  .hero-title-animated {
+    text-shadow: 0 0 30px rgba(30, 136, 217, 0.6);
+  }
+
+  .hero-description-animated {
+    text-shadow: 0 0 25px rgba(91, 183, 242, 0.5);
+  }
+
+  /* Better spacing for mobile hero */
+  .hero-content > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Enhanced button styling for mobile */
+  .hero-cta .btn-primary {
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 25px rgba(30, 136, 217, 0.4);
+  }
+
+  .hero-cta .btn-text {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Grids */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-teaser-grid,
+  .two-column-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-teaser-image,
+  .image-column {
+    order: -1;
+  }
+
+  .about-teaser-image img,
+  .image-column img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tiers-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-info-container {
+    order: -1;
+  }
+
+  .contact-info-card {
+    margin-bottom: 15px;
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin: 0 auto 15px;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  /* Featured Event Card */
+  .featured-event-card {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .event-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .event-game-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+  }
+
+  .event-details {
+    margin-bottom: 25px;
+  }
+
+  .event-detail-item {
+    padding: 10px 0;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  /* Timeline */
+  .timeline {
+    padding-left: 25px;
+  }
+
+  .timeline-marker {
+    left: -31px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-content {
+    padding-left: 10px;
+  }
+
+  /* Stat numbers */
+  .stat-number {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+
+  .stat-label {
+    font-size: 0.95rem;
+  }
+
+  /* Buttons */
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-text {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    min-height: 44px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+  }
+
+  /* Cards */
+  .stat-card,
+  .event-card,
+  .benefit-card,
+  .value-card,
+  .team-member-card,
+  .tier-card,
+  .contact-info-card {
+    padding: 25px 18px;
+    border-radius: 14px;
+  }
+
+  .mission-card {
+    padding: 35px 25px;
+    border-radius: 16px;
+  }
+
+  /* Quote marks */
+  .quote-mark {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  /* Icons */
+  .value-icon,
+  .benefit-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+
+  .team-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Forms */
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 0.95rem;
+    min-height: 48px;
+  }
+
+  .form-group textarea {
+    min-height: 120px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 15px;
+  }
+
+  .footer-content {
+    gap: 30px;
+  }
+
+  .social-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .social-links a {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Small mobile: 320px - 479px */
+@media (max-width: 479px) {
+  html {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.625rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .page-title {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 1.3rem !important;
+    letter-spacing: 1px !important;
+    line-height: 1.3 !important;
+  }
+
+  .hero-title-animated {
+    font-size: 2.5rem !important;
+    letter-spacing: 1.5px !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero-tagline {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero-cta .btn,
+  .hero-cta .btn-text {
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    min-height: 48px;
+  }
+
+  .section-title {
+    font-size: 1.625rem;
+    margin-bottom: 25px;
+  }
+
+  .section {
+    padding: 40px 12px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .page-header {
+    padding: 80px 12px 40px;
+  }
+
+  .hero {
+    padding: 30px 12px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    min-height: 44px;
+  }
+
+  .stat-card,
+  .event-card,
+  .benefit-card,
+  .value-card,
+  .team-member-card,
+  .tier-card,
+  .contact-info-card {
+    padding: 20px 15px;
+  }
+
+  .mission-card {
+    padding: 30px 20px;
+  }
+
+  .featured-event-card {
+    padding: 25px 18px;
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  .value-icon,
+  .benefit-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .team-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .quote-mark {
+    font-size: 2rem;
+  }
+}
+
+/* Medium screens: 480px - 767px */
+@media (min-width: 480px) and (max-width: 767px) {
+  .hero {
+    padding: 80px 25px;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .hero-title-animated {
+    font-size: 3.5rem !important;
+    letter-spacing: 3px !important;
+    margin-bottom: 25px !important;
+  }
+
+  .hero-description {
+    font-size: 1.75rem !important;
+    letter-spacing: 2.5px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-tagline {
+    font-size: 1.2rem !important;
+    margin-bottom: 40px !important;
+  }
+
+  .hero-description-animated::after {
+    width: 140px;
+  }
+
+  .hero-content::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-cta {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .hero-cta .btn,
+  .hero-cta .btn-text {
+    width: auto;
+    min-width: 180px;
+    flex: 0 1 auto;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large desktop: 1440px+ */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .hero-content {
+    max-width: 900px;
+  }
+}
+
+/* Disable animations on very small screens for performance */
+@media (max-width: 479px) {
+  .hero-gradient-orb,
+  .hero-background-overlay,
+  .hero-grid {
+    animation: none;
+  }
+
+  .hero-orb-1,
+  .hero-orb-2,
+  .hero-orb-3 {
+    animation: none;
+  }
+
+  .section::before {
+    animation: none;
+  }
+
+  .page-header::before {
+    animation: none;
+  }
+
+  .cta-section::before {
+    animation: none;
+  }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digira Esports - Nepal's premier youth-led esports organization based in Kathmandu. Join tournaments, build community, and compete.">
+    <link rel="canonical" href="https://digira.xyz/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://digira.xyz/">
+    <meta property="og:title" content="Digira Esports | Kathmandu's Premier Gaming Community">
+    <meta property="og:description" content="Digira Esports - Nepal's premier youth-led esports organization based in Kathmandu. Join tournaments, build community, and compete.">
+    <meta property="og:image" content="https://digira.xyz/placeholder-logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://digira.xyz/">
+    <meta property="twitter:title" content="Digira Esports | Kathmandu's Premier Gaming Community">
+    <meta property="twitter:description" content="Digira Esports - Nepal's premier youth-led esports organization based in Kathmandu. Join tournaments, build community, and compete.">
+    <meta property="twitter:image" content="https://digira.xyz/placeholder-logo.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsOrganization",
+      "name": "Digira Esports",
+      "url": "https://digira.xyz",
+      "logo": "https://digira.xyz/assets/logo.png",
+      "description": "Nepal's premier youth-led esports organization based in Kathmandu.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kathmandu",
+        "addressCountry": "NP"
+      },
+      "sameAs": [
+        "https://discord.gg/digira",
+        "https://instagram.com/digira.esports",
+        "https://facebook.com/digira.esports",
+        "https://youtube.com/@digira.esports"
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    <title>Digira Esports | Kathmandu's Premier Gaming Community</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/index.html" class="logo">
+                <video src="/assets/logo_animation_vid.mp4" autoplay loop muted playsinline></video>
+            </a>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/index.html" class="nav-link active">Home</a></li>
+                <li><a href="/events.html" class="nav-link">Events</a></li>
+                <li><a href="/about.html" class="nav-link">About</a></li>
+                <li><a href="/partners.html" class="nav-link">Partners</a></li>
+                <li><a href="/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+        <div class="hero-background-overlay"></div>
+        <div class="hero-gradient-orb hero-orb-1"></div>
+        <div class="hero-gradient-orb hero-orb-2"></div>
+        <div class="hero-gradient-orb hero-orb-3"></div>
+        <div class="hero-content fade-in">
+            <h1 class="hero-title-animated">DIGIRA ESPORTS</h1>
+            <p class="hero-description hero-description-animated">Turning Gamers to Champions</p>
+            <p class="hero-tagline hero-tagline-animated">Fueling Kathmandu's Esports Scene</p>
+            <div class="hero-cta">
+                <a href="https://discord.gg/digira" target="_blank" rel="noopener" class="btn btn-primary hero-btn-animated">Join Our Discord</a>
+                <a href="/events.html" class="btn-text hero-btn-animated" style="animation-delay: 0.1s;">View Events →</a>
+            </div>
+        </div>
+        <div class="hero-grid"></div>
+        <div class="hero-particles" id="heroParticles"></div>
+    </section>
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-dot" id="customCursorDot"></div>
+
+    <!-- Quick Stats Section -->
+    <section class="section stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+                <!-- <div class="stat-card fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Tournaments Hosted</div>
+                </div> -->
+                <div class="stat-card fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Games</div>
+                </div>
+                <div class="stat-card fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="stat-number">Growing</div>
+                    <div class="stat-label">Community</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Event Section -->
+    <section class="section featured-event-section">
+        <div class="container">
+            <h2 class="section-title">Featured Tournament</h2>
+            <div class="featured-event-card">
+                <div class="event-header">
+                    <img src="/assets/mlbb.png" alt="Mobile Legends" class="event-game-logo">
+                    <div class="event-meta">
+                        <h3>Mobile Legends Championship</h3>
+                        <span class="event-badge badge-open">Registration Open</span>
+                    </div>
+                </div>
+                <div class="event-details">
+                    <div class="event-detail-item">
+                        <span class="detail-label">Format:</span>
+                        <span class="detail-value">5v5 Tournament</span>
+                    </div>
+                    <div class="event-detail-item">
+                        <span class="detail-label">Date:</span>
+                        <span class="detail-value">TBD</span>
+                    </div>
+                    <div class="event-detail-item">
+                        <span class="detail-label">Prize Pool:</span>
+                        <span class="detail-value">NPR ??,000</span>
+                    </div>
+                </div>
+                <a href="/events.html" class="btn btn-primary">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Teaser -->
+    <section class="section about-teaser-section">
+        <div class="container">
+            <div class="about-teaser-grid">
+                <div class="about-teaser-content">
+                    <h2 class="section-title">Building Nepal's Esports Future</h2>
+                    <p>Founded by passionate teens in Kathmandu, Digira Esports is creating opportunities for competitive gamers across Nepal. We're more than a tournament organizer—we're a community dedicated to growth, competition, and excellence.</p>
+                    <a href="/about.html" class="btn btn-secondary">Learn More About Us</a>
+                </div>
+                <div class="about-teaser-image">
+                    <img src="/assets/logo.png" alt="Digira Team" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section cta-section">
+        <div class="container text-center">
+            <h2>Ready to Compete?</h2>
+            <p class="cta-subtitle">Join our growing community of competitive gamers in Kathmandu</p>
+            <div class="cta-buttons">
+                <a href="https://discord.gg/digira" target="_blank" rel="noopener" class="btn btn-primary">Join Discord</a>
+                <a href="/events.html" class="btn btn-secondary">View Tournaments</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="/assets/transparent_bg_digira_esports.png" alt="Digira Esports" class="footer-logo">
+                    <p class="footer-tagline">Nepal's Premier Esports Community</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/events.html">Events</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/partners.html">Partners</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://discord.gg/digira" target="_blank" rel="noopener" aria-label="Discord">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12h.01M15 12h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/digiraesports" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/digiraesports" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@digiraesports" target="_blank" rel="noopener" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Digira Esports. Kathmandu, Nepal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="/js/hero-animations.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
