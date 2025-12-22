@@ -172,8 +172,16 @@ const currentLocation = window.location.pathname
 const navItems = document.querySelectorAll(".nav-link")
 
 navItems.forEach((item) => {
-  const href = item.getAttribute("href")
-  if (currentLocation.includes(href) || (currentLocation === "/" && href === "/index.html")) {
+  const href = item.getAttribute("href");
+  const cleanHref = href.replace(/^\//, ''); // Remove leading slash if any
+  
+  // Logic for matching current page:
+  // 1. If current location contains the href (basic match)
+  // 2. Special case for HOME: if href is 'index.html' and we are at root '/' or '/repo/' (ends with '/')
+  const isHome = cleanHref === 'index.html';
+  const isRoot = currentLocation === '/' || currentLocation.endsWith('/');
+  
+  if (currentLocation.includes(cleanHref) || (isHome && isRoot)) {
     item.classList.add("active")
   } else {
     item.classList.remove("active")
