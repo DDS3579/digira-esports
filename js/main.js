@@ -85,85 +85,8 @@ document.querySelectorAll(".fade-in-up").forEach((el) => {
 })
 
 // ========================================
-// Contact Form Handling
-// ========================================
-const contactForm = document.getElementById("contactForm")
+// Contact Form Handling logic has been moved to contact.html for EmailJS integration
 
-if (contactForm) {
-  contactForm.addEventListener("submit", async (e) => {
-    e.preventDefault()
-
-    const submitBtn = document.getElementById("submitBtn")
-    const btnText = document.getElementById("btnText")
-    const btnLoader = document.getElementById("btnLoader")
-    const formMessage = document.getElementById("formMessage")
-
-    // Disable button and show loader
-    submitBtn.disabled = true
-    btnText.textContent = "Sending..."
-    btnLoader.style.display = "inline-block"
-    formMessage.style.display = "none"
-    formMessage.className = "form-message"
-
-    // Get form data
-    const formData = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      subject: document.getElementById("subject").value,
-      message: document.getElementById("message").value,
-    }
-
-    // Simulate form submission (replace with actual backend endpoint)
-    setTimeout(() => {
-      // Success
-      formMessage.textContent = "Thank you! Your message has been sent successfully. We'll get back to you soon."
-      formMessage.classList.add("success")
-      formMessage.style.display = "block"
-
-      // Reset form
-      contactForm.reset()
-
-      // Reset button
-      submitBtn.disabled = false
-      btnText.textContent = "Send Message"
-      btnLoader.style.display = "none"
-
-      // Hide message after 5 seconds
-      setTimeout(() => {
-        formMessage.style.display = "none"
-      }, 5000)
-    }, 1500)
-
-    // For actual implementation, replace the setTimeout with:
-    /*
-    try {
-      const response = await fetch('YOUR_FORM_ENDPOINT', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-      
-      if (response.ok) {
-        formMessage.textContent = 'Thank you! Your message has been sent successfully.';
-        formMessage.classList.add('success');
-        contactForm.reset();
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (error) {
-      formMessage.textContent = 'Sorry, something went wrong. Please try again or contact us via email.';
-      formMessage.classList.add('error');
-    } finally {
-      formMessage.style.display = 'block';
-      submitBtn.disabled = false;
-      btnText.textContent = 'Send Message';
-      btnLoader.style.display = 'none';
-    }
-    */
-  })
-}
 
 // ========================================
 // Set Active Navigation Link
@@ -361,6 +284,6 @@ function animateValue(element, start, end, duration) {
 console.log("%c🎮 Digira Esports", "color: #1E88D9; font-size: 24px; font-weight: bold;")
 console.log("%cFueling Kathmandu's Esports Scene", "color: #5BB7F2; font-size: 14px;")
 console.log(
-  "%cInterested in joining our team? Contact us at contact@digiraesports.com",
+  "%cInterested in joining our team? Contact us at digiraesports@gmail.com",
   "color: #9CA3AF; font-size: 12px;",
 )

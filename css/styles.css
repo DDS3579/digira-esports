@@ -867,6 +867,8 @@ p {
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
+  position: relative;
+  z-index: 1;
 }
 
 .btn-primary {
@@ -1197,6 +1199,8 @@ p {
   height: 200%;
   background: radial-gradient(circle, rgba(30, 136, 217, 0.1) 0%, transparent 70%);
   animation: cardGlow 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes cardGlow {
