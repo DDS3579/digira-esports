@@ -1176,6 +1176,22 @@ p {
 }
 
 /* Featured Event */
+.featured-events-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .featured-events-flex {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+}
+
 .featured-event-card {
   background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(11, 15, 20, 0.9) 100%);
   border: 1px solid rgba(30, 136, 217, 0.25);
