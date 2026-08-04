@@ -783,6 +783,47 @@ function initTeamSpotlight() {
   });
 }
 
+// --- FAQ Accordion (Intel Dossier) ---
+function initFAQ() {
+  const cards = document.querySelectorAll('.faq-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    const trigger = card.querySelector('.faq-trigger');
+    const content = card.querySelector('.faq-content');
+    const status = card.querySelector('.faq-status');
+
+    trigger.addEventListener('click', () => {
+      const isOpen = card.classList.contains('is-open');
+
+      // Strict Accordion: Close all other open cards first
+      cards.forEach(c => {
+        if (c !== card && c.classList.contains('is-open')) {
+          c.classList.remove('is-open');
+          c.querySelector('.faq-content').style.maxHeight = null;
+          c.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          const s = c.querySelector('.faq-status');
+          if (s) s.textContent = 'CLASSIFIED';
+        }
+      });
+
+      // Toggle current card
+      if (isOpen) {
+        card.classList.remove('is-open');
+        content.style.maxHeight = null;
+        trigger.setAttribute('aria-expanded', 'false');
+        if (status) status.textContent = 'CLASSIFIED';
+      } else {
+        card.classList.add('is-open');
+        // Calculate exact height for smooth animation
+        content.style.maxHeight = content.scrollHeight + 'px';
+        trigger.setAttribute('aria-expanded', 'true');
+        if (status) status.textContent = 'DECLASSIFIED';
+      }
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   updateAnchors();
   initScramble();
@@ -798,4 +839,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initPartnerTilt();
   requestTick();
   initTeamSpotlight();
+  initFAQ();           // <--- ADD THIS HERE
+  requestTick();
 });
