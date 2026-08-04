@@ -2473,3 +2473,215 @@ h2 {
     width: var(--skill);
   }
 }
+
+/* ============================================================
+   FAQ / INTEL DOSSIER
+   ============================================================ */
+.faq {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.faq-card {
+  position: relative;
+  border: 1px solid var(--line);
+  background: rgba(10, 14, 24, 0.5);
+  clip-path: var(--cut);
+  transition: border-color .3s, background .3s;
+  overflow: hidden;
+}
+
+/* Left neon glow bar when open */
+.faq-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: transparent;
+  transition: background .3s, box-shadow .3s;
+  z-index: 2;
+}
+
+.faq-card:hover {
+  border-color: rgba(0, 200, 255, 0.4);
+  background: rgba(0, 200, 255, 0.03);
+}
+
+.faq-card.is-open {
+  border-color: var(--neon-purple);
+  background: rgba(155, 61, 255, 0.04);
+}
+
+.faq-card.is-open::before {
+  background: var(--neon-purple);
+  box-shadow: 0 0 15px rgba(155, 61, 255, 0.6);
+}
+
+/* --- Trigger Button --- */
+.faq-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  color: var(--ink);
+  text-align: left;
+  font-family: inherit;
+}
+
+.faq-meta {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.faq-id {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--muted);
+  opacity: 0.7;
+}
+
+.faq-title {
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  margin: 0;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  transition: color .3s;
+}
+
+.faq-card:hover .faq-title {
+  color: var(--neon-blue);
+}
+
+.faq-card.is-open .faq-title {
+  color: var(--ink);
+}
+
+/* --- Status Tag --- */
+.faq-status {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--muted);
+  background: rgba(140, 170, 220, 0.08);
+  padding: 6px 12px;
+  border-radius: 2px;
+  transition: all .3s;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.faq-card.is-open .faq-status {
+  color: var(--neon-purple);
+  background: rgba(155, 61, 255, 0.12);
+  border-color: rgba(155, 61, 255, 0.4);
+  box-shadow: 0 0 10px rgba(155, 61, 255, 0.2);
+}
+
+/* --- Plus Icon --- */
+.faq-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: var(--neon-blue);
+  transition: transform .4s cubic-bezier(.22, 1, .36, 1), background .3s, border-color .3s, color .3s;
+}
+
+.faq-card:hover .faq-icon {
+  border-color: var(--neon-blue);
+  background: rgba(0, 200, 255, 0.1);
+}
+
+.faq-card.is-open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--neon-purple);
+  border-color: var(--neon-purple);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(155, 61, 255, 0.4);
+}
+
+/* --- Expandable Content --- */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(.22, 1, .36, 1);
+}
+
+.faq-inner {
+  padding: 0 28px 28px;
+  padding-left: 28px; 
+}
+
+.faq-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+  max-width: 760px;
+}
+
+.faq-text a {
+  color: var(--neon-blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: color .2s, text-shadow .2s;
+}
+
+.faq-text a:hover {
+  color: var(--neon-purple);
+  text-shadow: 0 0 8px rgba(155, 61, 255, 0.4);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .faq-trigger { 
+    padding: 20px; 
+    gap: 16px; 
+  }
+  .faq-inner { 
+    padding: 0 20px 24px; 
+  }
+}
+
+@media (max-width: 640px) {
+  .faq-status { 
+    display: none; /* Hide on mobile to prevent layout cramping */
+  }
+  .faq-title { 
+    font-size: 0.95rem; 
+  }
+  .faq-icon {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-content {
+    transition: none;
+  }
+  .faq-icon {
+    transition: background .2s, border-color .2s, color .2s;
+  }
+}
