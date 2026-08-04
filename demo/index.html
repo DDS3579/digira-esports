@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Digira Esports - Nepal's premier youth-led esports organization based in Kathmandu. Join tournaments, build community, and compete."
+    />
+    <meta
+      name="keywords"
+      content="digira esports, digira esports nepal, digira xyz, digira esports xyz, esports nepal, kathmandu esports, nepal gaming community, competitive gaming nepal, pubg mobile nepal, valorant nepal, free fire nepal, mobile legends nepal, esports tournaments nepal, youth esports organization"
+    />
+    <link rel="canonical" href="https://digira.xyz/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://digira.xyz/" />
+    <meta
+      property="og:title"
+      content="Digira Esports | Kathmandu's Premier Gaming Community"
+    />
+    <meta
+      property="og:description"
+      content="Digira Esports - Nepal's premier youth-led esports organization based in Kathmandu. Join tournaments, build community, and compete."
+    />
+    <meta property="og:image" content="https://digira.xyz/assets/logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://digira.xyz/" />
+    <meta
+      property="twitter:title"
+      content="Digira Esports | Kathmandu's Premier Gaming Community"
+    />
+    <meta
+      property="twitter:description"
+      content="Digira Esports - Nepal's premier youth-led esports organization based in Kathmandu. Join tournaments, build community, and compete."
+    />
+    <meta
+      property="twitter:image"
+      content="https://digira.xyz/assets/logo.png"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsOrganization",
+        "name": "Digira Esports",
+        "url": "https://digira.xyz",
+        "logo": "https://digira.xyz/assets/logo.png",
+        "description": "Nepal's premier youth-led esports organization based in Kathmandu.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kathmandu",
+          "addressCountry": "NP"
+        },
+        "sameAs": [
+          "https://discord.gg/JtH8SkgnPu",
+          "https://instagram.com/digira.esports",
+          "https://facebook.com/digira.esports",
+          "https://youtube.com/@digira.esports"
+        ]
+      }
+    </script>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <title>Digira Esports | Kathmandu's Premier Gaming Community</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor">
+      <div class="cursor-arrow">
+        <img src="blue-pointer.png" alt="Cursor" class="cursor-img" />
+      </div>
+    </div>
+
+    <!-- Sparks Canvas -->
+    <canvas id="sparks" aria-hidden="true"></canvas>
+
+    <!-- Main Outer Shell -->
+    <div class="shell">
+      <!-- Header -->
+      <header class="site-header">
+        <a class="brand" href="#home">
+          <img
+            class="brand-logo"
+            src="https://i.ibb.co/rG0WhKC0/digira-esports-logo.png"
+            alt="Digira logo"
+          />
+        </a>
+
+        <nav class="site-nav">
+          <a href="#home" class="is-active">HOME</a>
+          <a href="#events">EVENTS</a>
+          <a href="#about">ABOUT</a>
+          <a href="#partners">PARTNERS</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+
+        <div class="header-right">
+          <span class="geo">KATHMANDU <i class="geo-dot"></i></span>
+          <a class="cta-skew" href="#contact">
+            <span class="cta-label">LET'S TALK</span>
+            <span class="cta-arrow">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </span>
+          </a>
+          <button class="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+          <!-- Scanline Overlay -->
+          <div class="scanlines"></div>
+
+          <!-- Neon Glow Ring -->
+          <div class="neon-glow-ring"></div>
+
+          <div class="plate" aria-hidden="true">
+            <div class="mascot-reveal-wrap" id="mascotRevealWrap">
+              <img
+                class="hero-mascot-bg"
+                src="mascot-square.png"
+                alt="Mascot"
+                id="mascotBase"
+              />
+              <canvas
+                class="mascot-overlay-canvas"
+                id="mascotOverlayCanvas"
+              ></canvas>
+            </div>
+            <img
+              id="mascotOverlaySrc"
+              src="mascot-overlay.png"
+              alt=""
+              style="display: none"
+            />
+            <i
+              class="shard"
+              style="
+                --s: 28px;
+                --c: var(--neon-blue);
+                --d: 0.8;
+                --r: -25deg;
+                top: 8%;
+                right: 18%;
+              "
+            ></i>
+            <i
+              class="shard"
+              style="
+                --s: 48px;
+                --c: #0a0e18;
+                --d: 1.2;
+                --r: 30deg;
+                top: 18%;
+                right: 2%;
+              "
+            ></i>
+            <i
+              class="shard"
+              style="
+                --s: 36px;
+                --c: var(--neon-purple);
+                --d: 0.5;
+                --r: -15deg;
+                top: 52%;
+                right: 90%;
+              "
+            ></i>
+            <i
+              class="shard"
+              style="
+                --s: 22px;
+                --c: #f2f7ff;
+                --d: 1.5;
+                --r: 45deg;
+                top: 76%;
+                right: 8%;
+              "
+            ></i>
+            <i
+              class="shard"
+              style="
+                --s: 56px;
+                --c: var(--neon-blue);
+                --d: 0.6;
+                --r: -40deg;
+                top: 4%;
+                right: 40%;
+              "
+            ></i>
+            <i
+              class="shard"
+              style="
+                --s: 30px;
+                --c: #0a0e18;
+                --d: 1.1;
+                --r: 15deg;
+                top: 38%;
+                right: 1%;
+              "
+            ></i>
+            <i
+              class="shard"
+              style="
+                --s: 64px;
+                --c: var(--neon-purple);
+                --d: 1.6;
+                --r: 50deg;
+                top: 82%;
+                right: 70%;
+              "
+            ></i>
+            <i
+              class="shard"
+              style="
+                --s: 24px;
+                --c: #f2f7ff;
+                --d: 0.4;
+                --r: -30deg;
+                top: 30%;
+                right: 95%;
+              "
+            ></i>
+          </div>
+
+          <div class="hero-left">
+            <p class="eyebrow">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                <path d="M2 12h20" />
+              </svg>
+              <span id="scramble">UPCOMING EVENTS</span>
+              <span class="chev">»</span>
+            </p>
+
+            <h1 class="hero-title">
+              <span class="line line-1"
+                ><span class="line-in">FUELING</span></span
+              >
+              <span class="line line-2 accent"
+                ><span class="line-in">NEPAL'S</span></span
+              >
+              <span class="line line-3"
+                ><span class="line-in">ESPORTS</span></span
+              >
+            </h1>
+
+            <p class="hero-copy">
+              Digira is Nepal's home for competitive gaming — tournaments,
+              community scrims and broadcast-level production. Strategy. Skill.
+              Scene. All in one place.
+            </p>
+
+            <div class="hero-ctas">
+              <a class="btn solid" href="#events">
+                OUR EVENTS
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+              <a class="btn ghost" href="#about">
+                ABOUT DIGIRA
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <aside class="hero-rail">
+            <div class="squad">
+              <img
+                class="squad-ava"
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Squad member 1"
+              />
+              <img
+                class="squad-ava"
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                alt="Squad member 2"
+              />
+              <img
+                class="squad-ava"
+                src="https://randomuser.me/api/portraits/men/75.jpg"
+                alt="Squad member 3"
+              />
+              <img
+                class="squad-ava"
+                src="https://randomuser.me/api/portraits/women/68.jpg"
+                alt="Squad member 4"
+              />
+              <span class="squad-plus">+</span>
+            </div>
+
+            <ul class="stats">
+              <li class="stat">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                  <path d="M4 22h16" />
+                  <path
+                    d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"
+                  />
+                  <path
+                    d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"
+                  />
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" />
+                </svg>
+                <span class="num" data-count="5">0<i>+</i></span>
+                <span class="lbl">EVENTS ORGANIZED</span>
+              </li>
+              <li class="stat">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                <span class="num" data-count="128">0<i>+</i></span>
+                <span class="lbl">TEAMS HOSTED</span>
+              </li>
+              <li class="stat">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+                <span class="num" data-count="96">0<i>%</i></span>
+                <span class="lbl">COMMUNITY APPROVAL</span>
+              </li>
+            </ul>
+          </aside>
+
+          <div class="featured">
+            <div>
+              <span class="f-eyebrow">FEATURED EVENT</span>
+              <h3 class="f-title">MYTHICAL BATTLEGROUNDS CHAMPIONSHIP</h3>
+              <p class="f-sub">
+                Season 2.0 — coming soon • PC • 5v5 • LAN Finals
+              </p>
+            </div>
+            <a class="f-go" href="#events" aria-label="View featured event">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Scroll Down Indicator -->
+          <div class="scroll-indicator">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- TICKER BAR -->
+        <div class="ticker-bar">
+          <span class="tick-tag">DIGIRA WIRE »</span>
+          <div class="ticker">
+            <div class="ticker-track">
+              <span
+                >MYTHICAL BATTLEGROUNDS S2.0 — REGISTRATIONS OPENING SOON
+                <span class="sep">////</span></span
+              >
+              <span
+                >DIGIRA OPEN SCRIMS — SATURDAYS 8PM NPT
+                <span class="sep">////</span></span
+              >
+              <span
+                >HIMALAYA CLASH LAN // POKHARA — OCT 2026
+                <span class="sep">////</span></span
+              >
+              <span
+                >NEW PARTNER DROP — STAY TUNED
+                <span class="sep">////</span></span
+              >
+              <span
+                >MYTHICAL BATTLEGROUNDS S2.0 — REGISTRATIONS OPENING SOON
+                <span class="sep">////</span></span
+              >
+              <span
+                >DIGIRA OPEN SCRIMS — SATURDAYS 8PM NPT
+                <span class="sep">////</span></span
+              >
+              <span
+                >HIMALAYA CLASH LAN // POKHARA — OCT 2026
+                <span class="sep">////</span></span
+              >
+              <span
+                >NEW PARTNER DROP — STAY TUNED
+                <span class="sep">////</span></span
+              >
+            </div>
+          </div>
+          <div class="dots"><i class="on"></i><i></i><i></i></div>
+        </div>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- EVENTS SECTION -->
+        <section class="events" id="events">
+          <header class="sec-head">
+            <p class="sec-eyebrow">01 // CALENDAR</p>
+            <h2>EVENT CALENDAR</h2>
+          </header>
+
+          <ol class="event-list">
+            <li class="event-row rev">
+              <span class="e-number">01</span>
+              <div class="e-date">
+                <b>SEP</b>
+                <i>12</i>
+              </div>
+              <div class="e-info">
+                <h3>DIGIRA OPEN: VALORANT SCRIMS</h3>
+                <p class="e-meta">Online • 5v5 • Weekly</p>
+              </div>
+              <span class="e-status st-open"
+                >REG OPEN<span class="pulse-dot"></span
+              ></span>
+              <a
+                class="e-go"
+                href="#contact"
+                aria-label="Register for Valorant Scrims"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </li>
+
+            <li class="event-row rev">
+              <span class="e-number">02</span>
+              <div class="e-date">
+                <b>OCT</b>
+                <i>03</i>
+              </div>
+              <div class="e-info">
+                <h3>HIMALAYA CLASH: MOBILE MASTERS</h3>
+                <p class="e-meta">Pokhara • LAN • Free Fire</p>
+              </div>
+              <span class="e-status st-open"
+                >REG OPEN<span class="pulse-dot"></span
+              ></span>
+              <a
+                class="e-go"
+                href="#contact"
+                aria-label="Register for Mobile Masters"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </li>
+
+            <li class="event-row rev">
+              <span class="e-number">03</span>
+              <div class="e-date">
+                <b>NOV</b>
+                <i>21</i>
+              </div>
+              <div class="e-info">
+                <h3>MYTHICAL BATTLEGROUNDS S2.0</h3>
+                <p class="e-meta">Kathmandu • LAN • Flagship</p>
+              </div>
+              <span class="e-status st-soon">COMING SOON</span>
+              <a
+                class="e-go"
+                href="#contact"
+                aria-label="Learn more about Mythical Battlegrounds"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </li>
+
+            <li class="event-row rev">
+              <span class="e-number">04</span>
+              <div class="e-date">
+                <b>DEC</b>
+                <i>19</i>
+              </div>
+              <div class="e-info">
+                <h3>WINTER SHOWMATCH: COMMUNITY CUP</h3>
+                <p class="e-meta">Online • All titles</p>
+              </div>
+              <span class="e-status st-full">SLOTS FULL</span>
+              <a class="e-go" href="#contact" aria-label="Community Cup full">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </li>
+          </ol>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- ABOUT SECTION -->
+        <section class="about" id="about">
+          <p class="sec-eyebrow rev">02 // WHO WE ARE</p>
+          <h2 class="about-title rev">
+            BUILT BY PLAYERS, <span class="accent-purple">FOR PLAYERS.</span>
+          </h2>
+
+          <div class="about-grid">
+            <div class="about-copy">
+              <p class="rev">
+                Digira started in a Kathmandu gaming cafe with five PCs and one
+                belief: Nepal's players deserve stages as big as their skill.
+              </p>
+              <p class="rev">
+                Today we organize LANs, run weekly scrims and broadcast every
+                clutch to a growing community — building the infrastructure
+                Nepali esports has been waiting for.
+              </p>
+            </div>
+
+            <div class="about-facts rev">
+              <svg
+                class="corner c-tl"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+              >
+                <path
+                  d="M0 12V0H12"
+                  stroke="var(--neon-blue)"
+                  stroke-width="2"
+                  fill="none"
+                />
+              </svg>
+              <svg
+                class="corner c-tr"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+              >
+                <path
+                  d="M0 0H12V12"
+                  stroke="var(--neon-blue)"
+                  stroke-width="2"
+                  fill="none"
+                />
+              </svg>
+              <svg
+                class="corner c-bl"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+              >
+                <path
+                  d="M0 0V12H12"
+                  stroke="var(--neon-blue)"
+                  stroke-width="2"
+                  fill="none"
+                />
+              </svg>
+              <svg
+                class="corner c-br"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+              >
+                <path
+                  d="M12 0V12H0"
+                  stroke="var(--neon-blue)"
+                  stroke-width="2"
+                  fill="none"
+                />
+              </svg>
+
+              <div class="fact">
+                <b data-count="2021">2021</b>
+                <span>FOUNDED, KTM</span>
+              </div>
+              <div class="fact">
+                <b data-count="40">40+</b>
+                <span>CREW & CASTERS</span>
+              </div>
+              <div class="fact">
+                <b data-count="4">4</b>
+                <span>TITLES SUPPORTED</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ TEAM / MEET THE SQUAD ============ -->
+          <div class="team">
+            <header class="team-head rev">
+              <div class="th-left">
+                <p class="sec-eyebrow">02.1 // THE ROSTER</p>
+                <h2 class="team-title">
+                  MEET THE <span class="accent-blue">SQUAD</span>
+                </h2>
+              </div>
+              <p class="th-sub">
+                CASTERS, ORGANIZERS & BUILDERS —<br />THE CREW BEHIND EVERY
+                CLUTCH MOMENT.
+              </p>
+            </header>
+
+            <div class="team-grid">
+              <!-- Member 01 -->
+              <article class="team-card rev" style="--rd: 0ms">
+                <span class="t-index">01</span>
+                <div class="t-photo">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/85.jpg"
+                    alt="Divya — Founder"
+                  />
+                  <i class="t-scan"></i>
+                  <i class="t-status"></i>
+                </div>
+                <div class="t-body">
+                  <h3 class="t-handle">DDS</h3>
+                  <p class="t-real">Divya D. Sharma</p>
+                  <p class="t-role">FOUNDER / TOURNAMENT DIRECTOR</p>
+                  <div class="t-stats">
+                    <div class="t-bar">
+                      <span>STRATEGY <em>95</em></span>
+                      <div class="t-track"><i style="--skill: 95%"></i></div>
+                    </div>
+                    <div class="t-bar">
+                      <span>LEADERSHIP <em>90</em></span>
+                      <div class="t-track"><i style="--skill: 90%"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Member 02 -->
+              <article class="team-card rev" style="--rd: 90ms">
+                <span class="t-index">02</span>
+                <div class="t-photo">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/65.jpg"
+                    alt="Nova — Head of Broadcast"
+                  />
+                  <i class="t-scan"></i>
+                  <i class="t-status"></i>
+                </div>
+                <div class="t-body">
+                  <h3 class="t-handle">NOVA</h3>
+                  <p class="t-real">Priya Maharjan</p>
+                  <p class="t-role">HEAD OF BROADCAST</p>
+                  <div class="t-stats">
+                    <div class="t-bar">
+                      <span>PRODUCTION <em>90</em></span>
+                      <div class="t-track"><i style="--skill: 90%"></i></div>
+                    </div>
+                    <div class="t-bar">
+                      <span>TIMING <em>85</em></span>
+                      <div class="t-track"><i style="--skill: 85%"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Member 03 -->
+              <article class="team-card rev" style="--rd: 180ms">
+                <span class="t-index">03</span>
+                <div class="t-photo">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/41.jpg"
+                    alt="Titan — Community Lead"
+                  />
+                  <i class="t-scan"></i>
+                  <i class="t-status"></i>
+                </div>
+                <div class="t-body">
+                  <h3 class="t-handle">TITAN</h3>
+                  <p class="t-real">Bibek Gurung</p>
+                  <p class="t-role">COMMUNITY LEAD</p>
+                  <div class="t-stats">
+                    <div class="t-bar">
+                      <span>COMMUNITY <em>94</em></span>
+                      <div class="t-track"><i style="--skill: 94%"></i></div>
+                    </div>
+                    <div class="t-bar">
+                      <span>HYPE <em>89</em></span>
+                      <div class="t-track"><i style="--skill: 89%"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Member 04 -->
+              <article class="team-card rev" style="--rd: 270ms">
+                <span class="t-index">04</span>
+                <div class="t-photo">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/21.jpg"
+                    alt="Pixel — Creative Director"
+                  />
+                  <i class="t-scan"></i>
+                  <i class="t-status"></i>
+                </div>
+                <div class="t-body">
+                  <h3 class="t-handle">PIXEL</h3>
+                  <p class="t-real">Sona Rai</p>
+                  <p class="t-role">CREATIVE DIRECTOR</p>
+                  <div class="t-stats">
+                    <div class="t-bar">
+                      <span>DESIGN <em>91</em></span>
+                      <div class="t-track"><i style="--skill: 91%"></i></div>
+                    </div>
+                    <div class="t-bar">
+                      <span>MOTION <em>87</em></span>
+                      <div class="t-track"><i style="--skill: 87%"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Join CTA strip -->
+            <div class="team-cta rev">
+              <div class="tc-left">
+                <span class="tc-title">THINK YOU'VE GOT WHAT IT TAKES?</span>
+                <span class="tc-sub"
+                  >WE'RE ALWAYS SCOUTING CASTERS, ADMINS & CREATIVES.</span
+                >
+              </div>
+              <a href="#contact" class="tc-btn">
+                JOIN THE CREW
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- PARTNERS SECTION -->
+        <section class="partners" id="partners">
+          <p class="sec-eyebrow rev">03 // ALLIES</p>
+          <h2 class="rev">PARTNERS IN THE GRIND</h2>
+
+          <div class="partner-grid">
+            <span class="partner rev">HYPETECH NEPAL</span>
+            <span class="partner rev">SAGARMATHA ENERGY</span>
+            <span class="partner rev">KTM STREAM LABS</span>
+            <span class="partner rev">YETI GEAR CO.</span>
+            <span class="partner rev">MOMO GAMING CAFE</span>
+            <span class="partner rev">PIXEL KATHMANDU</span>
+          </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact" id="contact">
+          <h2 class="rev">
+            READY TO ENTER <span class="accent-blue">THE ARENA?</span>
+          </h2>
+          <p class="contact-copy rev">
+            Sponsor an event, field a team, or just say namaste — our lobby is
+            always warm.
+          </p>
+
+          <div class="contact-ctas rev">
+            <a class="btn solid" href="#">
+              JOIN OUR DISCORD
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </a>
+            <a class="btn ghost" href="#">
+              PARTNER WITH US
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="socials rev">
+            <a class="soc" href="#" aria-label="Discord" data-tooltip="Discord">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 6h0a14 14 0 0 0-4-1.5 9.6 9.6 0 0 0-.5 1A15 15 0 0 0 10.5 5.5a9.6 9.6 0 0 0-.5-1A14 14 0 0 0 6 6C3 10.5 3 15 3 15a14 14 0 0 0 4.5 2.5 10 10 0 0 0 1-1.5 9 9 0 0 1-1.5-.7s.1 0 .2-.1c3.5 1.7 7.3 1.7 10.6 0l.2.1a9 9 0 0 1-1.5.7 10 10 0 0 0 1 1.5A14 14 0 0 0 21 15s0-4.5-3-9zM8.5 13.5c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5zm7 0c-.8 0-1.5-.7-1.5-1.5s.7-1.5 1.5-1.5 1.5.7 1.5 1.5-.7 1.5-1.5 1.5z"
+                />
+              </svg>
+            </a>
+            <a
+              class="soc"
+              href="#"
+              aria-label="Instagram"
+              data-tooltip="Instagram"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a class="soc" href="#" aria-label="YouTube" data-tooltip="YouTube">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                />
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+              </svg>
+            </a>
+            <a class="soc" href="#" aria-label="Twitch" data-tooltip="Twitch">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M21 2H3v16h5v4l4-4h5l4-4V2zm-2 13l-3 3h-4l-3 3v-3H6V4h13v11z"
+                />
+                <path d="M16 8h-2v4h2V8zm-5 0H9v4h2V8z" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <span class="f-brand">DIGIRA ESPORTS</span>
+        <nav class="f-nav">
+          <a href="#home">Home</a>
+          <a href="#events">Events</a>
+          <a href="#about">About</a>
+          <a href="#partners">Partners</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p class="f-mono">
+          © 2026 DIGIRA ESPORTS — KATHMANDU, NEPAL // FUELED BY THE COMMUNITY
+        </p>
+
+        <!-- Back to Top Button -->
+        <button class="back-to-top" aria-label="Back to top">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </footer>
+    </div>
+
+    <!-- Mobile Drawer & Overlay -->
+    <div class="drawer">
+      <button class="drawer-close" aria-label="Close menu">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="drawer-accent"></div>
+      <nav
+        style="
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          position: relative;
+          z-index: 2;
+        "
+      >
+        <a href="#home">Home</a>
+        <a href="#events">Events</a>
+        <a href="#about">About</a>
+        <a href="#partners">Partners</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="drawer-cta" href="#contact">
+        <span class="cta-label">LET'S TALK</span>
+        <span class="cta-arrow">
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M7 17L17 7" />
+            <path d="M7 7h10v10" />
+          </svg>
+        </span>
+      </a>
+    </div>
+    <div class="drawer-backdrop"></div>
+  </body>
+</html>
