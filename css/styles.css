@@ -255,10 +255,12 @@ img {
   gap: 12px;
 }
 
-.brand-logo {
-  height: 48px;
+.brand-logo,
+.brand-logo-video {
+  height: 60px;
   width: auto;
   object-fit: contain;
+  border-radius: 6px;
 }
 
 .brand-name {
