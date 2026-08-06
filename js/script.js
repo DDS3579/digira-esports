@@ -849,47 +849,66 @@ function initEventModal() {
   const $ctaLabel = modal.querySelector('.em-btn-label');
 
   function openModal(row) {
-    const data = row.dataset;
+  const data = row.dataset;
 
-    // Populate
-    $title.textContent = data.title;
-    $prize.textContent = data.prize;
-    $date.textContent = data.date;
-    $location.textContent = data.location;
-    $format.textContent = data.format;
-    $entry.textContent = data.entry;
-    $description.textContent = data.description;
-    $status.textContent = data.statusText;
-    $status.dataset.status = data.status;
-    $fileId.textContent = data.file;
-    $ctaLabel.textContent = data.ctaText || 'REGISTER NOW';
+  // Populate
+  $title.textContent = data.title;
+  $prize.textContent = data.prize;
+  $date.textContent = data.date;
+  $location.textContent = data.location;
+  $format.textContent = data.format;
+  $entry.textContent = data.entry;
+  $description.textContent = data.description;
+  $status.textContent = data.statusText;
+  $status.dataset.status = data.status;
+  $fileId.textContent = data.file;
+  $ctaLabel.textContent = data.ctaText || 'REGISTER NOW';
+  
+  $cta.href = data.formLink || '#contact';
+  $cta.target = data.status === 'ended' ? '_blank' : '_blank';
+  $cta.rel = 'noopener noreferrer';
 
-    // Build schedule
-    $schedule.innerHTML = '';
-    if (data.schedule) {
-      data.schedule.split('|').forEach(part => {
-        const item = document.createElement('div');
-        item.className = 'em-schedule-item';
-        item.textContent = part.trim();
-        $schedule.appendChild(item);
-      });
-    }
-
-    // Build teams
-    $teams.innerHTML = '';
-    if (data.teams) {
-      data.teams.split('|').forEach(team => {
-        const el = document.createElement('div');
-        el.className = 'em-team';
-        el.textContent = team.trim();
-        $teams.appendChild(el);
-      });
-    }
-
-    // Show
-    modal.classList.add('is-open');
-    document.body.classList.add('modal-open');
+  // Build schedule (handle "TBD" gracefully)
+  $schedule.innerHTML = '';
+  if (data.schedule && data.schedule.trim().toLowerCase() !== 'tbd') {
+    data.schedule.split('|').forEach(part => {
+      const item = document.createElement('div');
+      item.className = 'em-schedule-item';
+      item.textContent = part.trim();
+      $schedule.appendChild(item);
+    });
+  } else {
+    const item = document.createElement('div');
+    item.className = 'em-schedule-item';
+    item.textContent = 'Schedule to be announced';
+    item.style.opacity = '0.6';
+    item.style.fontStyle = 'italic';
+    $schedule.appendChild(item);
   }
+
+  // Build teams (handle "TBD" gracefully)
+  $teams.innerHTML = '';
+  if (data.teams && data.teams.trim().toLowerCase() !== 'tbd') {
+    data.teams.split('|').forEach(team => {
+      const el = document.createElement('div');
+      el.className = 'em-team';
+      el.textContent = team.trim();
+      $teams.appendChild(el);
+    });
+  } else {
+    const el = document.createElement('div');
+    el.className = 'em-team';
+    el.textContent = 'Teams to be announced';
+    el.style.opacity = '0.6';
+    el.style.fontStyle = 'italic';
+    el.style.gridColumn = '1 / -1';
+    $teams.appendChild(el);
+  }
+
+  // Show
+  modal.classList.add('is-open');
+  document.body.classList.add('modal-open');
+}
 
   function closeModal() {
     modal.classList.remove('is-open');
