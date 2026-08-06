@@ -2669,8 +2669,8 @@ body.modal-open {
 /* --- Grid --- */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 /* --- Card --- */
@@ -2687,6 +2687,43 @@ body.modal-open {
 .team-card:nth-child(even) {
   --accent: var(--neon-purple);
   --accent-glow: rgba(155, 61, 255, 0.28);
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 4;
+}
+
+.team-card:hover::before {
+  opacity: 1;
+}
+
+/* NEW: Enhanced index number glow on hover */
+.team-card:hover .t-index {
+  -webkit-text-stroke-color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* NEW: Subtle ambient glow behind the whole grid */
+.team::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 50%;
+  background: radial-gradient(ellipse, rgba(0, 200, 255, 0.05), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Mouse-follow spotlight glow */
@@ -3023,6 +3060,103 @@ body.modal-open {
   }
   .team-card.in .t-track i {
     width: var(--skill);
+  }
+}
+
+
+/* ============================================================
+   TEAM — RESPONSIVE (3 → 2 → 1 columns, compact on mobile)
+   ============================================================ */
+@media (max-width: 1100px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+/* Compact sizing on tablets / small laptops */
+@media (max-width: 900px) {
+  .t-photo {
+    aspect-ratio: 1 / 1;
+  }
+  .t-body {
+    padding: 16px 15px 18px;
+  }
+  .t-handle {
+    font-size: 1.25rem;
+  }
+  .t-index {
+    font-size: 44px;
+  }
+  .t-stats {
+    gap: 10px;
+    margin-top: 13px;
+    padding-top: 13px;
+  }
+}
+
+/* Mobile: keep 2 columns but tighter */
+@media (max-width: 700px) {
+  .team-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .th-sub {
+    text-align: left;
+  }
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .t-photo {
+    aspect-ratio: 1 / 1;
+  }
+  .t-body {
+    padding: 14px 13px 16px;
+  }
+  .t-handle {
+    font-size: 1.15rem;
+  }
+  .t-real {
+    font-size: 10px;
+  }
+  .t-role {
+    font-size: 9px;
+    letter-spacing: .14em;
+    margin-top: 9px;
+  }
+  .t-index {
+    font-size: 38px;
+    top: 6px;
+    right: 9px;
+  }
+  .t-bar span {
+    font-size: 8px;
+  }
+  .t-track {
+    height: 3px;
+  }
+}
+
+/* Very small: single column, centered, compact */
+@media (max-width: 460px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 14px;
+  }
+  .t-photo {
+    aspect-ratio: 4 / 3.4;
+  }
+  .team-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 22px;
+  }
+  .tc-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
