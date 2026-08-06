@@ -824,6 +824,101 @@ function initFAQ() {
   });
 }
 
+// --- Event Detail Modal ---
+function initEventModal() {
+  const modal = document.getElementById('eventModal');
+  if (!modal) return;
+
+  const closeBtn = modal.querySelector('.em-close');
+  const backdrop = modal.querySelector('.em-backdrop');
+  const rows = document.querySelectorAll('.event-row');
+
+  // DOM refs inside modal
+  const $title = modal.querySelector('#modalTitle');
+  const $prize = modal.querySelector('#modalPrize');
+  const $date = modal.querySelector('#modalDate');
+  const $location = modal.querySelector('#modalLocation');
+  const $format = modal.querySelector('#modalFormat');
+  const $entry = modal.querySelector('#modalEntry');
+  const $description = modal.querySelector('#modalDescription');
+  const $schedule = modal.querySelector('#modalSchedule');
+  const $teams = modal.querySelector('#modalTeams');
+  const $status = modal.querySelector('.em-status');
+  const $fileId = modal.querySelector('.em-file-id');
+  const $cta = modal.querySelector('#modalCta');
+  const $ctaLabel = modal.querySelector('.em-btn-label');
+
+  function openModal(row) {
+    const data = row.dataset;
+
+    // Populate
+    $title.textContent = data.title;
+    $prize.textContent = data.prize;
+    $date.textContent = data.date;
+    $location.textContent = data.location;
+    $format.textContent = data.format;
+    $entry.textContent = data.entry;
+    $description.textContent = data.description;
+    $status.textContent = data.statusText;
+    $status.dataset.status = data.status;
+    $fileId.textContent = data.file;
+    $ctaLabel.textContent = data.ctaText || 'REGISTER NOW';
+
+    // Build schedule
+    $schedule.innerHTML = '';
+    if (data.schedule) {
+      data.schedule.split('|').forEach(part => {
+        const item = document.createElement('div');
+        item.className = 'em-schedule-item';
+        item.textContent = part.trim();
+        $schedule.appendChild(item);
+      });
+    }
+
+    // Build teams
+    $teams.innerHTML = '';
+    if (data.teams) {
+      data.teams.split('|').forEach(team => {
+        const el = document.createElement('div');
+        el.className = 'em-team';
+        el.textContent = team.trim();
+        $teams.appendChild(el);
+      });
+    }
+
+    // Show
+    modal.classList.add('is-open');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
+  }
+
+  // Attach click to each event row (excluding the go-link)
+  rows.forEach(row => {
+    row.addEventListener('click', (e) => {
+      // Don't open if they clicked the external CTA
+      if (e.target.closest('a[href^="#contact"]') || e.target.closest('a[href^="http"]')) {
+        return;
+      }
+      openModal(row);
+    });
+    row.style.cursor = 'pointer';
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  // Close on ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   updateAnchors();
   initScramble();
@@ -839,6 +934,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initPartnerTilt();
   requestTick();
   initTeamSpotlight();
-  initFAQ();           // <--- ADD THIS HERE
+  initFAQ();         
+  initEventModal();
   requestTick();
 });
