@@ -1,3 +1,11 @@
+// Immediate Theme Check to avoid flash
+(function () {
+  const storedTheme = localStorage.getItem("digira-theme");
+  if (storedTheme === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+})();
+
 // --- Helpers ---
 const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 const lerp = (a, b, t) => a + (b - a) * t;
@@ -42,7 +50,6 @@ const burgerBtn = document.querySelector(".burger");
 const drawerEl = document.querySelector(".drawer");
 const backdropEl = document.querySelector(".drawer-backdrop");
 const siteHeader = document.querySelector(".site-header");
-const scrollProgress = document.querySelector(".scroll-progress");
 const cursorArrow = document.querySelector(".cursor-arrow");
 const backToTopBtn = document.querySelector(".back-to-top");
 
@@ -85,16 +92,6 @@ function updateHeader() {
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 }
 
-// --- Scroll Progress Bar ---
-function updateScrollProgress() {
-  const winScroll =
-    document.body.scrollTop || document.documentElement.scrollTop;
-  const height =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-  const scrolled = (winScroll / height) * 100;
-  scrollProgress.style.width = scrolled + "%";
-}
 
 // --- Back to Top Button ---
 function updateBackToTop() {
@@ -229,9 +226,6 @@ function updateFrame() {
 
   // Update header visibility
   updateHeader();
-
-  // Update scroll progress
-  updateScrollProgress();
 
   // Update back-to-top button
   updateBackToTop();
@@ -938,7 +932,24 @@ function initEventModal() {
   });
 }
 
+function initTheme() {
+  const toggleBtn = document.getElementById("themeToggle");
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      const isLight = document.documentElement.getAttribute("data-theme") === "light";
+      if (isLight) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("digira-theme", "dark");
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        localStorage.setItem("digira-theme", "light");
+      }
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
   updateAnchors();
   initScramble();
   initCountUp();
