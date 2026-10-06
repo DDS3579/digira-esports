@@ -40,27 +40,27 @@
       property="og:description"
       content="Digira Esports is Nepal's premier youth-led esports organization based in Kathmandu. Join tournaments, build community, compete in MLBB, Free Fire, PUBG Mobile & Valorant."
     />
-    <meta property="og:image" content="https://digira.xyz/assets/logo.png" />
+    <meta property="og:image" content="https://digira.xyz/assets/og-cover.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Digira Esports Logo" />
+    <meta
+      property="og:image:alt"
+      content="Digira Esports — Nepal's Gaming & Esports Community"
+    />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://digira.xyz/" />
-    <meta property="twitter:site" content="@digira_esports" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://digira.xyz/" />
+    <meta name="twitter:site" content="@digira_esports" />
     <meta
-      property="twitter:title"
+      name="twitter:title"
       content="Digira Esports | Nepal's Premier Gaming & Esports Community"
     />
     <meta
-      property="twitter:description"
+      name="twitter:description"
       content="Digira Esports is Nepal's premier youth-led esports organization based in Kathmandu. Join tournaments, build community, compete in MLBB, Free Fire, PUBG Mobile & Valorant."
     />
-    <meta
-      property="twitter:image"
-      content="https://digira.xyz/assets/logo.png"
-    />
+    <meta name="twitter:image" content="https://digira.xyz/assets/og-cover.png" />
 
     <!-- JSON-LD Structured Data for SEO & GEO -->
     <script type="application/ld+json">
@@ -209,7 +209,6 @@
       }
     </script>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <title>Digira Esports | Kathmandu's Premier Gaming Community</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -292,7 +291,7 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <path d="M12 3a6 6 0 0 0 9 9 9 0 1 1-9-9Z" />
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
             </svg>
           </button>
           <span class="geo">KATHMANDU <i class="geo-dot"></i></span>
@@ -334,9 +333,12 @@
             <div class="mascot-reveal-wrap" id="mascotRevealWrap">
               <img
                 class="hero-mascot-bg"
-                src="./assets/mascot-square.png"
-                alt="Mascot"
+                src="./assets/mascot-square.webp"
+                alt="Digira Esports mascot"
                 id="mascotBase"
+                width="1000"
+                height="1000"
+                fetchpriority="high"
               />
               <canvas
                 class="mascot-overlay-canvas"
@@ -345,8 +347,10 @@
             </div>
             <img
               id="mascotOverlaySrc"
-              src="./assets/mascot-overlay.png"
+              src="./assets/mascot-overlay.webp"
               alt=""
+              width="1000"
+              height="1000"
               style="display: none"
             />
             <i
